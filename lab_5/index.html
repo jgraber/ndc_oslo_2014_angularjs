@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
+</head>
+<body class="container ng-cloak" ng-app="atTheMovies">
+
+    <nav class="navbar navbar-default navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">At The Movies (NG)</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row" ng-controller="MoviesController">
+        {{error}}
+        <div class="col-md-12">
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Year</th>
+                        <th>Rating</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="movie in movies">
+                        <td>{{movie.title}}</td>
+                        <td>{{movie.year}}</td>
+                        <td><div class="ratings" stars="movie.rating"></div></td>
+                        <td><button ng-click="edit(movie)">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-12" ng-show="editableMovie">
+            <form name="editMovie">
+                {{editableMovie.id}}
+                Title: <input name="Title" required=""  ng-model="editableMovie.title">
+                Year: <input name="Year" required="" type="number" ng-model="editableMovie.year" />
+                Rating: <input name="Rating" required="" type="number" ng-model="editableMovie.rating" />
+
+                <button ng-click="update(editableMovie)">Save</button> <button ng-click="reset()" ng-hide="isUnchanged(editableMovie)">Reset</button>
+            </form>
+        </div>
+
+
+    </div>
+
+    
+
+    <script src="../lib/angular.min.js"></script>
+    <script src="scripts/atTheMovies.js"></script>
+    <script src="scripts/HelloController.js"></script>
+
+    <script src="scripts/RatingDirective.js"></script>
+
+    <script src="scripts/MovieController.js"></script>
+    <script src="scripts/MovieService.js"></script>
+</body>
+
+</html>

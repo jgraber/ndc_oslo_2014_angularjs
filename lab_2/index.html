@@ -31,8 +31,8 @@
                         <td>{{movie.year}}</td>
                         <td>{{movie.rating}}</td>
                         <td>
-                            <button ng-click="increase(movie)">Rating +</button>
-                            <button ng-click="decrease(movie)">Rating -</button>
+                            <button ng-click="increase(movie)" class="btn btn-success">Rating +</button>
+                            <button ng-click="decrease(movie)" class="btn btn-warning">Rating -</button>
                         </td>
                     </tr>
                 </tbody>
@@ -42,8 +42,6 @@
 
     <script src="../lib/angular.min.js"></script>
     <script src="scripts/atTheMovies.js"></script>
-    <script src="scripts/HelloController.js"></script>
-
     <script src="scripts/MovieController.js"></script>
     <script src="scripts/MovieService.js"></script>
 </body>

@@ -4,7 +4,7 @@
 
         return {
             getAll: function () {
-                return $http.get("http://localhost:3000/api/movies");
+                return $http.get("http://localhost:8080/api/movies");
             }
         };
     };

@@ -30,7 +30,7 @@
                         <td>{{movie.title}}</td>
                         <td>{{movie.year}}</td>
                         <td><div class="ratings" stars="movie.rating"></div></td>
-                        <td><button ng-click="edit(movie)">Edit</button></td>
+                        <td><button ng-click="edit(movie)" class="btn btn-success">Edit</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -43,21 +43,16 @@
                 Year: <input name="Year" required="" type="number" ng-model="editableMovie.year" />
                 Rating: <input name="Rating" required="" type="number" ng-model="editableMovie.rating" />
 
-                <button ng-click="update(editableMovie)">Save</button> <button ng-click="reset()" ng-hide="isUnchanged(editableMovie)">Reset</button>
+                <button ng-click="update(editableMovie)" class="btn btn-success">Save</button> <button ng-click="reset()" ng-hide="isUnchanged(editableMovie)" class="btn btn-warning">Reset</button>
             </form>
         </div>
 
 
     </div>
 
-    
-
     <script src="../lib/angular.min.js"></script>
     <script src="scripts/atTheMovies.js"></script>
-    <script src="scripts/HelloController.js"></script>
-
     <script src="scripts/RatingDirective.js"></script>
-
     <script src="scripts/MovieController.js"></script>
     <script src="scripts/MovieService.js"></script>
 </body>

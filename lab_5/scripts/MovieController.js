@@ -26,6 +26,10 @@
             $scope.editableMovie = angular.copy(movie);
         }
 
+        $scope.reset = function () {
+            $scope.editableMovie = null;
+        }
+
         $scope.update = function (movie)
         {
             movieService

@@ -1,9 +1,9 @@
 ﻿(function () {
 
-    var MoviesController = function ($scope, movieService) {
+    var MovieListController = function ($scope, movieService) {
 
-        var onMovies = function (response) {
-            $scope.movies = response.data;
+        var onMovies = function (movies) {
+            $scope.movies = movies;
         };
 
         var onError = function (reason) {
@@ -46,7 +46,6 @@
     };
 
     var module = angular.module("atTheMovies");
-    module.controller("MoviesController",
-        ["$scope", "movieService", MoviesController]);
+    module.controller("MovieListController", MovieListController);
 
 }());

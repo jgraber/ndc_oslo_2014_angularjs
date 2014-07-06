@@ -13,48 +13,18 @@
         </div>
     </nav>
 
-    <div class="row" ng-controller="MoviesController">
-        {{error}}
-        <div class="col-md-12">
-            <table class="table table-condensed">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Year</th>
-                        <th>Rating</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="movie in movies">
-                        <td>{{movie.title}}</td>
-                        <td>{{movie.year}}</td>
-                        <td><div class="ratings" stars="movie.rating"></div></td>
-                        <td><button ng-click="edit(movie)" class="btn btn-success">Edit</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="col-md-12" ng-show="editableMovie">
-            <form name="editMovie">
-                {{editableMovie.id}}
-                Title: <input name="Title" required=""  ng-model="editableMovie.title">
-                Year: <input name="Year" required="" type="number" ng-model="editableMovie.year" />
-                Rating: <input name="Rating" required="" type="number" ng-model="editableMovie.rating" />
-
-                <button ng-click="update(editableMovie)" class="btn btn-success">Save</button> <button ng-click="reset()" ng-hide="isUnchanged(editableMovie)" class="btn btn-warning">Reset</button>
-            </form>
-        </div>
-
-
+    <div ng-view>
+        
     </div>
 
     <script src="../lib/angular.min.js"></script>
+    <script src="../lib/angular-route.min.js"></script>
+    
+    <script src="scripts/MovieService.js"></script>
     <script src="scripts/atTheMovies.js"></script>
     <script src="scripts/RatingDirective.js"></script>
+    <script src="scripts/MovieEditController.js"></script>
     <script src="scripts/MovieController.js"></script>
-    <script src="scripts/MovieService.js"></script>
 </body>
 
 </html>

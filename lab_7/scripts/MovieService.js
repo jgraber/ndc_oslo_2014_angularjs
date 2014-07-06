@@ -1,18 +1,48 @@
 ﻿(function () {
 
-    var movieService = function ($http) {
+    var module = angular.module("atTheMovies.data", []);
+    module.config(function ($provide) {
+        $provide.provider("movieService", function () {
 
-        return {
-            getAll: function () {
-                return $http.get("http://localhost:8080/api/movies");
-            },
-            save: function (movie) {
-                return $http.put("http://localhost:8080/api/movies", movie);
-            }
-        };
-    };
+            var url;
 
-    var module = angular.module("atTheMovies");
-    module.factory("movieService", movieService);
+            this.setRootUrl = function (newUrl) {
+                url = newUrl;
+            };
 
+            this.$get = function ($http, $q, $timeout) {
+
+                var movies = null;
+
+                return {
+
+                    getById: function(id) {
+                        return $http.get(url + "/" + id)
+                                    .then(function(response) {
+                                        return response.data;
+                                    });
+                    },
+
+                    getAll: function () {
+
+                        if (movies) {
+                            return $q.when(movies);
+                        } else {
+
+                            return $http.get(url)
+                                .then(function (response) {
+                                    movies = response.data;
+                                    return movies;
+                                });
+                        }
+                    },
+                    save: function (movie) {
+                        movies = null;
+                        return $http.put(url, movie);
+                    }
+                };
+            };
+
+        });
+    });
 }());

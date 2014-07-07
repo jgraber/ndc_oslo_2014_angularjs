@@ -1,0 +1,27 @@
+<div ng-show="error" class="col-md-7">
+{{error.status}} - {{error.statusText}}
+</div>
+
+<div ng-show="editableMovie" class="col-md-7">
+
+<table  class="table table-condensed">
+<tr>
+	<td>Id:</td>
+	<td>{{editableMovie.id}}</td>
+</tr>
+<tr>
+	<td>Title</td>
+	<td>{{editableMovie.title}}</td>
+</tr>
+<tr>
+	<td>Year</td>
+	<td>{{editableMovie.year}}</td>
+</tr>
+<tr>
+	<td>Rating</td>
+	<td>{{editableMovie.rating}}</td>
+</tr>
+</table>
+        <a class="btn btn-default" href="#/list/">Back</a>
+        <a class="btn btn-success" href="#/edit/{{editableMovie.id}}">Edit</a>
+</div>

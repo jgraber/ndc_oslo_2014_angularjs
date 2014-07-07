@@ -21,6 +21,10 @@ var module = angular.module("atTheMovies",
                 templateUrl: "views/edit.html",
                 controller: "MovieEditController"
             })
+            .when("/:id", {                
+                templateUrl: "views/detail.html",
+                controller: "MovieEditController"
+            })
             .otherwise({                
                 redirectTo: "/list" 
             });

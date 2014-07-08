@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
+</head>
+<body class="container ng-cloak" ng-app="atTheMovies">
+
+    <nav class="navbar navbar-default navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">At The Movies (NG)</a>
+            </div>
+        </div>
+    </nav>
+
+    <div ng-view>
+        
+    </div>
+
+    <script src="../lib/angular.min.js"></script>
+    <script src="../lib/angular-route.min.js"></script>
+    
+    <script src="scripts/MovieService.js"></script>
+    <script src="scripts/atTheMovies.js"></script>
+    <script src="scripts/RatingDirective.js"></script>
+    <script src="scripts/MovieEditController.js"></script>
+    <script src="scripts/MovieController.js"></script>
+</body>
+
+</html>

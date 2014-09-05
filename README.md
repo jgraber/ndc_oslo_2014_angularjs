@@ -1,7 +1,7 @@
 AngularJS Workshop NCD Oslo 2014
 ======
 
-Code for the AngularJS Workshop with K. Scott Allen (2. + 3. 7. 2014) that covered these topics:
+Code for the AngularJS Workshop with [K. Scott Allen](http://odetocode.com/blogs/all) (2. + 3. 7. 2014) that covered these topics:
 
 1. [Introduction to Angular](./lab_1/index.html)
 2. [Modules](./lab_2/index.html)
